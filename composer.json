@@ -17,7 +17,7 @@
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3"
+        "testflowlabs/pest-plugin-bridge": "dev-main"
     },
     "autoload": {
         "psr-4": {
@@ -81,6 +81,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
