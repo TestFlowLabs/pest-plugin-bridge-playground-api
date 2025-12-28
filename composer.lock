@@ -10779,12 +10779,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TestFlowLabs/pest-plugin-bridge.git",
-                "reference": "c552261e7c452b282a05aa150ce10e2f27e85444"
+                "reference": "3da327f64e1dbeae6fcc373f1af00fa1fa83897b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TestFlowLabs/pest-plugin-bridge/zipball/c552261e7c452b282a05aa150ce10e2f27e85444",
-                "reference": "c552261e7c452b282a05aa150ce10e2f27e85444",
+                "url": "https://api.github.com/repos/TestFlowLabs/pest-plugin-bridge/zipball/3da327f64e1dbeae6fcc373f1af00fa1fa83897b",
+                "reference": "3da327f64e1dbeae6fcc373f1af00fa1fa83897b",
                 "shasum": ""
             },
             "require": {
@@ -10794,8 +10794,9 @@
                 "php": "^8.3"
             },
             "require-dev": {
-                "laravel/pint": "^1.18",
-                "phpstan/phpstan": "^2.0"
+                "laravel/pint": "^1.26",
+                "pestphp/pest-dev-tools": "^4.0.0",
+                "pestphp/pest-plugin-type-coverage": "^4.0"
             },
             "default-branch": true,
             "type": "library",
@@ -10830,7 +10831,7 @@
                 "issues": "https://github.com/TestFlowLabs/pest-plugin-bridge/issues",
                 "source": "https://github.com/TestFlowLabs/pest-plugin-bridge/tree/main"
             },
-            "time": "2025-12-28T06:33:53+00:00"
+            "time": "2025-12-28T22:54:35+00:00"
         },
         {
             "name": "theseer/tokenizer",
