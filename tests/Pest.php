@@ -9,6 +9,6 @@ pest()->extends(TestCase::class)
     ->in('Browser');
 
 // Configure external Nuxt frontend with automatic server management
+// Note: readyWhen() is optional - the default pattern covers Nuxt, Vite, Next.js, CRA, Angular
 Bridge::setDefault('http://localhost:3000')
-    ->serve('npm run dev', cwd: '../pest-plugin-bridge-playground-nuxt')
-    ->readyWhen('Local:.*http');
+    ->serve('npm run dev', cwd: '../pest-plugin-bridge-playground-nuxt');
