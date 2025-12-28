@@ -3,8 +3,11 @@
 use TestFlowLabs\PestPluginBridge\Bridge;
 use Tests\TestCase;
 
-// Note: RefreshDatabase doesn't work with external server browser tests
-// The transaction isolation prevents seeing changes made by the external server
+// Database requirements for browser tests:
+// - SQLite in-memory (:memory:) does NOT work - each connection gets isolated database
+// - RefreshDatabase does NOT work - transaction isolation prevents API calls from seeing data
+// - Use file-based SQLite or real database (configured in phpunit.xml)
+// - Use DatabaseMigrations or DatabaseTruncation instead of RefreshDatabase
 pest()->extends(TestCase::class)
     ->in('Browser');
 
