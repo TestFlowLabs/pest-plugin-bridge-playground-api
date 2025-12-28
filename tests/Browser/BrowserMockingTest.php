@@ -1,14 +1,14 @@
 <?php
 
-use TestFlowLabs\PestPluginBridge\BridgeTrait;
+use TestFlowLabs\PestPluginBridge\Bridge;
 
-describe('BrowserMocking Frontend Mocking', function () {
+describe('Bridge::mockBrowser() Frontend Mocking', function () {
     beforeEach(function () {
-        BridgeTrait::clearBrowserMocks();
+        Bridge::clearBrowserMocks();
     });
 
     it('mocks direct frontend API calls', function () {
-        BridgeTrait::mockBrowser([
+        Bridge::mockBrowser([
             'https://api.quotable.io/*' => [
                 'status' => 200,
                 'body' => [
@@ -18,27 +18,27 @@ describe('BrowserMocking Frontend Mocking', function () {
             ],
         ]);
 
-        $this->bridgeWithMocks('/quote')
+        $this->bridge('/quote')
             ->waitForEvent('networkidle')
             ->assertSee('Mocked inspirational quote for testing')
             ->assertSee('Mock Author');
     });
 
     it('handles frontend API errors gracefully', function () {
-        BridgeTrait::mockBrowser([
+        Bridge::mockBrowser([
             'https://api.quotable.io/*' => [
                 'status' => 500,
                 'body' => ['error' => 'Service unavailable'],
             ],
         ]);
 
-        $this->bridgeWithMocks('/quote')
+        $this->bridge('/quote')
             ->waitForEvent('networkidle')
             ->assertSee('Unable to fetch quote');
     });
 
     it('mocks specific quote content', function () {
-        BridgeTrait::mockBrowser([
+        Bridge::mockBrowser([
             'https://api.quotable.io/*' => [
                 'status' => 200,
                 'body' => [
@@ -48,7 +48,7 @@ describe('BrowserMocking Frontend Mocking', function () {
             ],
         ]);
 
-        $this->bridgeWithMocks('/quote')
+        $this->bridge('/quote')
             ->waitForEvent('networkidle')
             ->assertSee('The only way to do great work is to love what you do')
             ->assertSee('Steve Jobs');
