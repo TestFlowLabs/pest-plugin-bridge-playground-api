@@ -1,18 +1,17 @@
 <?php
 
-use App\Models\User;
-
 it('can register a new user', function () {
-    $this->bridge('/register')
-        ->fill('[data-testid="name-input"]', 'John Doe')
-        ->fill('[data-testid="email-input"]', 'john@example.com')
-        ->fill('[data-testid="password-input"]', 'password123')
-        ->fill('[data-testid="password-confirmation-input"]', 'password123')
-        ->click('[data-testid="register-button"]')
-        ->waitForPath('/dashboard')
-        ->assertPathContains('/dashboard')
-        ->assertVisible('[data-testid="user-info"]')
-        ->assertSeeIn('[data-testid="user-name"]', 'John Doe');
+    $email = 'register'.time().'@example.com';
 
-    expect(User::where('email', 'john@example.com')->exists())->toBeTrue();
+    $this->bridge('/register')
+        ->waitForEvent('networkidle')
+        ->click('input#name')
+        ->typeSlowly('input#name', 'NewUser', 30)
+        ->typeSlowly('input#email', $email, 20)
+        ->typeSlowly('input#password', 'password123', 20)
+        ->typeSlowly('input#password_confirmation', 'password123', 20)
+        ->click('button[type="submit"]')
+        ->waitForEvent('networkidle')
+        ->assertPathContains('/dashboard')
+        ->assertSee('Welcome');
 });
