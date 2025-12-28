@@ -10779,12 +10779,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TestFlowLabs/pest-plugin-bridge.git",
-                "reference": "12c853397d65662879a46f96b8d480af34d83869"
+                "reference": "205a506092d3f304d8832761fd7914afb982c033"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TestFlowLabs/pest-plugin-bridge/zipball/12c853397d65662879a46f96b8d480af34d83869",
-                "reference": "12c853397d65662879a46f96b8d480af34d83869",
+                "url": "https://api.github.com/repos/TestFlowLabs/pest-plugin-bridge/zipball/205a506092d3f304d8832761fd7914afb982c033",
+                "reference": "205a506092d3f304d8832761fd7914afb982c033",
                 "shasum": ""
             },
             "require": {
@@ -10831,7 +10831,7 @@
                 "issues": "https://github.com/TestFlowLabs/pest-plugin-bridge/issues",
                 "source": "https://github.com/TestFlowLabs/pest-plugin-bridge/tree/main"
             },
-            "time": "2025-12-28T23:09:24+00:00"
+            "time": "2025-12-28T23:33:52+00:00"
         },
         {
             "name": "theseer/tokenizer",
